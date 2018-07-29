@@ -1,0 +1,37 @@
+{
+  "name": "dual_production_api",
+  "version": "0.0.1",
+  "description": "Dual Production API",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=text-lcov --reporter=text mocha --timeout 10000 --recursive --require babel-register",
+    "start": "nodemon --exec npm run babel-node -- src/main.js",
+    "babel-node": "node_modules/.bin/babel-node",
+    "build-dev": "babel ./src -d ./dist --source-maps inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.in.ciag.org.br:JSFS/dual-production/backend.git"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "joi": "^13.4.0",
+    "jsonpath": "^1.0.0",
+    "mysql2": "^1.5.3",
+    "rxjs": "^6.2.1",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.1",
+    "nyc": "^11.7.1",
+    "sonarqube-scanner": "^2.0.2"
+  },
+  "author": "CIAg",
+  "license": "ISC"
+}
